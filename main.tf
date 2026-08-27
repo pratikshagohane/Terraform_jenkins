@@ -10,6 +10,14 @@ resource "aws_instance" "name" {
 
    tags = {
     Name = "my-terra"
+  } 
+}
+
+
+terraform {
+  backend "s3" {
+    bucket = "abc123"
+    key = "terraform-jenkins/terraform.tfstate"
+    region = "ap-south-1"
   }
-  
 }
